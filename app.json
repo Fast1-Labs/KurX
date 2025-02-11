@@ -3,7 +3,6 @@
     "name": "KurX",
     "slug": "KurX",
     "version": "1.0.0",
-
     "scheme": "KurX",
     "web": {
       "bundler": "metro",
@@ -21,28 +20,33 @@
     ],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anilyavas.KurX"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.anilyavas.KurX"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0e02106d-edc5-47d8-bc1a-deaf77fb3f33"
       }
     }
   }
