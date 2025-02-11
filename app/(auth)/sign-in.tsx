@@ -1,5 +1,6 @@
 import { useOAuth, useSignIn } from '@clerk/clerk-expo';
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Link, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
@@ -9,7 +10,6 @@ import {
   Button,
   View,
   StyleSheet,
-  SafeAreaView,
   Dimensions,
   Pressable,
   KeyboardAvoidingView,
@@ -66,8 +66,10 @@ export default function Page() {
   }, [googleAuth, setActive, router]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+    <LinearGradient colors={['#0a0f0d', '#064e3b', '#052e16']} style={{ flex: 1 }}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.container}>
         <View style={styles.bodyContainer}>
           <Text style={styles.title}>Giriş Yap</Text>
           <Text style={styles.inputText}>Email</Text>
@@ -103,7 +105,7 @@ export default function Page() {
           <StatusBar style="light" />
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </LinearGradient>
   );
 }
 
@@ -112,7 +114,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#121212',
   },
   title: {
     color: 'gainsboro',

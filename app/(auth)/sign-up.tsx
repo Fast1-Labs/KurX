@@ -1,4 +1,5 @@
 import { useSignUp } from '@clerk/clerk-expo';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Link, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
@@ -7,7 +8,6 @@ import {
   TextInput,
   Button,
   StyleSheet,
-  SafeAreaView,
   Dimensions,
   View,
   Pressable,
@@ -76,8 +76,10 @@ export default function SignUpScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+    <LinearGradient colors={['#0a0f0d', '#064e3b', '#052e16']} style={{ flex: 1 }}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.container}>
         <View style={styles.bodyContainer}>
           <Text style={styles.title}>Kayıt Ol</Text>
           <Text style={styles.inputText}>Email</Text>
@@ -112,7 +114,7 @@ export default function SignUpScreen() {
         </View>
         <StatusBar style="light" />
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </LinearGradient>
   );
 }
 
@@ -121,7 +123,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#121212',
   },
   bodyContainer: {
     gap: 5,
