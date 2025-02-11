@@ -69,34 +69,34 @@ export default function Page() {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.bodyContainer}>
-          <Text style={styles.title}>Sign In</Text>
+          <Text style={styles.title}>Giriş Yap</Text>
           <Text style={styles.inputText}>Email</Text>
           <TextInput
             style={styles.textInput}
             autoCapitalize="none"
             value={emailAddress}
-            placeholder="Enter email"
+            placeholder="email@email.com"
             onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
           />
-          <Text style={styles.inputText}>Password</Text>
+          <Text style={styles.inputText}>Şifre</Text>
           <TextInput
             style={styles.textInput}
             value={password}
-            placeholder="Enter password"
+            placeholder="******"
             secureTextEntry
             onChangeText={(password) => setPassword(password)}
           />
           {error && <Text style={styles.errorMessage}>{error}</Text>}
           <Pressable style={styles.googleButton} onPress={handleGoogleAuth}>
-            <Text style={styles.signInGoogleText}>Sign in with Google</Text>
+            <Text style={styles.signInGoogleText}>Google ile giriş yap</Text>
             <FontAwesome name="google" size={20} color="black" />
           </Pressable>
-          <Button title="Sign in" onPress={onSignInPress} color="cyan" />
+          <Button title="Giriş yap" onPress={onSignInPress} color="cyan" />
           <View style={styles.signupContainer}>
-            <Text style={styles.bottomText}>Don't have an account?</Text>
+            <Text style={styles.bottomText}>Kayıtlı hesabınız yok mu?</Text>
             <Link href="/sign-up" asChild>
               <Pressable style={styles.signupButton}>
-                <Text style={styles.signupText}>Sign Up</Text>
+                <Text style={styles.signupText}>Kayıt ol</Text>
               </Pressable>
             </Link>
           </View>

@@ -67,10 +67,10 @@ export default function SignUpScreen() {
         <TextInput
           style={[styles.textInput, { width: Dimensions.get('window').width / 3 }]}
           value={code}
-          placeholder="Enter your verification code"
+          placeholder="Doğrulama Kodunu Giriniz"
           onChangeText={(code) => setCode(code)}
         />
-        <Button title="Verify" onPress={onVerifyPress} color="cyan" />
+        <Button title="Doğrula" onPress={onVerifyPress} color="cyan" />
       </View>
     );
   }
@@ -79,33 +79,33 @@ export default function SignUpScreen() {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.bodyContainer}>
-          <Text style={styles.title}>Sign Up</Text>
+          <Text style={styles.title}>Kayıt Ol</Text>
           <Text style={styles.inputText}>Email</Text>
 
           <TextInput
             style={styles.textInput}
             autoCapitalize="none"
             value={emailAddress}
-            placeholder="Enter email"
+            placeholder="email@email.com"
             onChangeText={(email) => setEmailAddress(email)}
           />
-          <Text style={styles.inputText}>Password</Text>
+          <Text style={styles.inputText}>Şifre</Text>
           <TextInput
             style={styles.textInput}
             value={password}
-            placeholder="Enter password"
+            placeholder="******"
             secureTextEntry
             onChangeText={(password) => setPassword(password)}
           />
           {password.length < 8 && (
-            <Text style={styles.warningMessage}>Password must be minimum of 8 characters!</Text>
+            <Text style={styles.warningMessage}>Şifreniz en az 8 karakter olmalı!</Text>
           )}
-          <Button title="Continue" onPress={onSignUpPress} color="cyan" />
+          <Button title="Devam" onPress={onSignUpPress} color="cyan" />
           <View style={styles.button}>
-            <Text style={[styles.buttonText, { color: 'white' }]}>Already have an account?</Text>
+            <Text style={[styles.buttonText, { color: 'white' }]}>Hesabınız var mı?</Text>
             <Link asChild href="/(auth)/sign-in">
               <Pressable style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>Sign In</Text>
+                <Text style={styles.buttonText}>Giriş yap</Text>
               </Pressable>
             </Link>
           </View>
